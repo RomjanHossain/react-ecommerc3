@@ -2,20 +2,14 @@ import React from "react";
 import "./App.css";
 import { Route } from "react-router-dom";
 import Homepage from "./pages/homepage/homepage.components";
-
-const hat = () => (
-  <div>
-    <h1>Heloaa</h1>
-    <h2>there kfsajd sjdf</h2>
-  </div>
-);
+import ShopList from "./pages/shop/shop.compo";
 
 function App() {
   return (
     <div className="App">
       {/* <Homepage /> */}
       <Route exact component={Homepage} path="/" />
-      <Route component={hat} path="/shop/hats" />
+      <Route component={ShopList} path="/shop" />
     </div>
   );
 }
