@@ -14,7 +14,8 @@ function App() {
   return (
     <div className="App">
       {/* <Homepage /> */}
-      <Route component={Homepage} path="/" />
+      <Route exact component={Homepage} path="/" />
+      <Route component={hat} path="/shop/hats" />
     </div>
   );
 }
