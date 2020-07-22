@@ -1,11 +1,14 @@
 import React from "react";
 import "./menu-item.components.scss";
-import { webRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 // creating a functional compo [we don't need any state to handle for this xD]
 
-const MenuItem = ({ title, imageUrl, size }) => (
-  <div className={`${size} menu-item`}>
+const MenuItem = ({ title, imageUrl, size, linkUrl, history, match }) => (
+  <div
+    className={` menu-item`}
+    onClick={() => history.push(`${match.url}${linkUrl}`)}
+  >
     <div
       className="backgroundImage"
       style={{ backgroundImage: `url(${imageUrl})` }}
@@ -17,4 +20,4 @@ const MenuItem = ({ title, imageUrl, size }) => (
   </div>
 );
 
-export default MenuItem;
+export default withRouter(MenuItem);
